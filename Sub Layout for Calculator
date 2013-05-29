@@ -1,0 +1,47 @@
+Private Sub butEquals_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butEquals.Click
+        Dim one As String, two As String, sign As String
+
+        'Setting the variables equal to the textbox values
+        one = txtOne.Text
+        two = txtTwo.Text
+
+        'If statement making sure one and two are numbers
+        If IsNumeric(one) = False Then
+            MessageBox.Show("Please enter only numbers", "Numbers only please", System.Windows.Forms.MessageBoxButtons.OK)
+            Exit Sub
+        Else
+            If IsNumeric(two) = False Then
+                MessageBox.Show("Please enter only numbers", "Numbers only please", System.Windows.Forms.MessageBoxButtons.OK)
+                Exit Sub
+            Else
+                Convert.ToDouble(one)
+                Convert.ToDouble(two)
+            End If
+        End If
+        
+        'assigns the combobox a value that contains the user designated operation
+        sign = cmboxSigns.Text
+
+        'If statement making sure there is an input for the operator
+        If sign = "" Then
+            MessageBox.Show("Please choose an operator from the combo box.", "Operator please", System.Windows.Forms.MessageBoxButtons.OK)
+            Exit Sub
+        End If
+
+
+        If sign = "%" Then
+            'Assigning the answer to the label and seeing if the remainder function is used
+            lblAnswer.Text = "The remainder is " & OpSolve(one, two)
+            Exit Sub
+        Else
+            If sign = "\" Then
+                lblAnswer.Text = "The integer value is " & OpSolve(one, two)
+                Exit Sub
+            Else
+                'Assigning the answer to the label and seeing if integer division is used
+                lblAnswer.Text = "The answer is " & OpSolve(one, two)
+            End If
+        End If
+
+
+    End Sub
