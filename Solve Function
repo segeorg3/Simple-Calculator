@@ -1,0 +1,46 @@
+    Function OpSolve(ByVal one As Double, ByVal two As Double)
+        Dim sign As String
+        Dim tmp As Double
+        sign = cmboxSigns.Text
+
+        If sign = "+" Then
+            Return one + two
+        End If
+
+        If sign = "-" Then
+            Return one - two
+        End If
+
+        If sign = "*" Then
+            Return one * two
+        End If
+
+        If sign = "/" Then
+            Return one / two
+        End If
+
+        If sign = "^" Then
+            Return one ^ two
+        End If
+
+        If sign = "%" Then
+            If one = two Then
+                Return 0
+                Exit Function
+            ElseIf one = 0 Then
+                Return 0
+                Exit Function
+            ElseIf (one / two) = Int(one / two) Then
+                Return 0
+                Exit Function
+            Else
+                tmp = one - Int(one / two) * two
+                Return tmp
+            End If
+        End If
+
+        If sign = "\" Then
+            Return one \ two
+        End If
+
+    End Function
