@@ -1,0 +1,25 @@
+    Private Sub butAverage_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butAverage.Click
+        Dim i As Double, answer As Double, count As Double, average As Double, STD As Double
+
+        For i = 0 To lstboxAve.Items.Count - 1
+            answer = answer + Convert.ToDouble(lstboxAve.Items(i))
+            count = count + 1
+        Next i
+        'Loop that both adds the values in the list box and getting a count of the total number
+
+        average = answer / count
+        lblAnswer.Text = "The average is " & average
+        'Finding the average for the list box values using the values from the loop above
+
+        answer = 0
+
+        For i = 0 To lstboxAve.Items.Count - 1
+            answer = answer + (lstboxAve.Items(i) - average) ^ 2
+        Next i
+        'Loop to find the standard deviation value
+
+        STD = (answer / count) ^ (1 / 2)
+        lblSTD.Text = "The Standard Deviation is " & STD
+        'displays the standard deviation in the form
+
+    End Sub
