@@ -1,0 +1,12 @@
+    Sub Initializeform()
+        
+        'Assigning the operators to the combo box
+        cmboxSigns.Items.Add("+")
+        cmboxSigns.Items.Add("-")
+        cmboxSigns.Items.Add("*")
+        cmboxSigns.Items.Add("\")
+        cmboxSigns.Items.Add("^")
+        cmboxSigns.Items.Add("%")
+        cmboxSigns.Items.Add("/")
+
+    End Sub
